@@ -1,0 +1,59 @@
+# Общие
+.DS_Store
+Thumbs.db
+*.log
+logs/
+*.tmp
+.tmp/
+.cache/
+
+# IDE/редакторы
+.vscode/
+.idea/
+*.iml
+
+# Node/JS
+node_modules/
+dist/
+build/
+coverage/
+.npm/
+.yarn/
+.pnp.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Java/Gradle
+*.class
+.gradle/
+
+# Rust/Cargo
+target/
+
+# Go
+tmp/
+
+# Ruby
+.bundle/
+
+# PHP/Composer
+vendor/
+
+# Terraform
+.terraform/
+*.tfstate*
+
+# Misc
+.env
+.env.*
+*.local
+
