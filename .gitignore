@@ -1,0 +1,34 @@
+# MetaTrader 4 Files
+*.ex4
+*.log
+
+# MetaEditor backup files
+*.bak
+
+# Testing results
+tester/
+*.htm
+*.html
+
+# MT4 History and Cache
+history/
+bases/
+logs/
+
+# Compiled files
+*.compiled
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*~
