@@ -10,8 +10,12 @@
     "dev:electron": "wait-on http://localhost:5173 && electron .",
     "build": "npm run build:backend && npm run build:frontend && npm run build:electron",
     "build:backend": "tsc -p tsconfig.backend.json",
-    "build:frontend": "tsc && vite build",
+    "build:frontend": "vite build",
     "build:electron": "tsc -p tsconfig.electron.json",
+    "package": "npm run build && electron-builder",
+    "package:win": "npm run build && electron-builder --win",
+    "package:mac": "npm run build && electron-builder --mac",
+    "package:linux": "npm run build && electron-builder --linux",
     "start": "electron .",
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx",
@@ -52,6 +56,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "concurrently": "^8.2.2",
     "electron": "^28.1.0",
+    "electron-builder": "^24.13.3",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.2",
@@ -60,5 +65,50 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.aiterminalide.app",
+    "productName": "AI Terminal IDE",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/backend",
+        "to": "backend"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icon.png",
+      "category": "Development"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
   }
 }
