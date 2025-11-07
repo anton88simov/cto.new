@@ -1,0 +1,13 @@
+{
+  "name": "demo-project",
+  "version": "1.0.0",
+  "description": "Demo project for AI Terminal IDE",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0",
+    "start": "node example.js"
+  },
+  "keywords": ["demo", "example"],
+  "author": "",
+  "license": "MIT"
+}
